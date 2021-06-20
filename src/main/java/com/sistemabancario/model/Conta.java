@@ -93,6 +93,13 @@ public class Conta implements Cadastro {
      */
     public void addMovimentacao(Movimentacao movimentacao) {
         // TODO: Você precisa implementar este método
+        if(movimentacao.isConfirmada()){
+            if(movimentacao.getTipo() == 'C'){
+                saldo += movimentacao.getValor();
+            } else if(movimentacao.getTipo() == 'D'){
+                saldo -= movimentacao.getValor();
+            }
+        }
     }
 
     /**
